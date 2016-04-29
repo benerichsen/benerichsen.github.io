@@ -1,0 +1,244 @@
+﻿<html>
+<head>
+    <title>CrownCanna - Turnkey Solutions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.fancybox.css" media="screen" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("a#inline").fancybox({
+            });
+        });
+    </script>
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#3c3c3c" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div style="position:relative; z-index:0;">
+        <script type="text/javascript" src="js/jssor.js"></script>
+        <script type="text/javascript" src="js/jssor.slider.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                var options = {
+                    $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                    $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                    $AutoPlayInterval: 8000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                    $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                    $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                    $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                    $SlideDuration: 1200,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                    $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                    //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                    //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                    $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                    $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                    $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                    $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                    $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                    $DragOrientation: 0,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                };
+
+                var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+                //responsive code begin
+                //you can remove responsive code if you don't want the slider scales while window resizes
+                function ScaleSlider() {
+                    var bodyWidth = document.body.clientWidth;
+                    if (bodyWidth)
+                        jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+
+                ScaleSlider();
+
+                if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                    $(window).bind('resize', ScaleSlider);
+                }
+
+
+                //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+                //    $(window).bind("orientationchange", ScaleSlider);
+                //}
+                //responsive code end
+            });
+        </script>
+        <!-- Jssor Slider Begin -->
+        <!-- You can move inline styles to css file or css block. -->
+        <div id="slider1_container" style="background-color: #858f2f; position: relative; margin: 0 auto; top: 0px; left: 0px; right: 0px; width: 800px; height: 400px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url(images/slideshow/loadingGreen.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <!-- Slides Container -->
+            <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px; overflow: hidden;">
+                <div>
+                    <img u="image" src="images/pageImages/turnkey.jpg" />
+                </div>
+            </div>
+            <div u="any" style="position: absolute; left: 420px; padding-top: 30px; padding-right: 50px; overflow: hidden;">
+                <table>
+                    <tr style="height:35px">
+                        <td class="shadowPageForeground pageHeader subPagesHeader">
+                            Hassle-Free Solutions
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="shadowPageForeground">
+                            <p>
+                                CrownCanna's turnkey cultivation units allow our clients to maintain their focus where it belongs: on their business.
+                            </p>
+
+                            <p>
+                                Our facilities offer:
+
+                                <ul>
+                                    <li>24 hour security</li>
+                                    <li>On-site parking</li>
+                                    <li>Free Wi-Fi</li>
+                                    <li>Lounge area</li>
+                                    <li>Trimming machines</li>
+                                    <li>Packaging materials</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Our standard units include:
+                                <ul>
+                                    <li>Climate control</li>
+                                    <li>HD Security cameras</li>
+                                    <li>Flowering room configured to your needs</li>
+                                    <li>All necessary tables and trays</li>
+                                    <li>Vegetation room</li>
+                                    <li>Drying and trimming room</li>
+                                </ul>
+                            </p>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="position: fixed; top: 0px; width: 100%; margin: 0 auto; background-color: hsla(0,0%,100%,0.7);">
+        <table id="NavigationTable" height="42" border="0" cellpadding="0" cellspacing="0" style="max-width: 1200px; width:100%; margin: 0 auto;">
+            <tr>
+                <td>
+                    <a class="btn_Nav_Home" href="index.html" title="Home"></a>
+                </td>
+                <td width="100%"></td>
+                <td>
+                    <a class="btn_Nav_Consulting" href="consulting.html" title="Consulting"></a>
+                </td>
+                <td>
+                    <img src="images/navImages/Top_Nav_Spacer01.png" width="7" height="42" alt="">
+                </td>
+                <td>
+                    <a class="btn_Nav_Customized" href="customized_spaces.html" title="Customized Spaces"></a>
+                </td>
+                <td>
+                    <img src="images/navImages/Top_Nav_Spacer01.png" width="7" height="42" alt="">
+                </td>
+                <td>
+                    <style>
+                        .selected_btn_Nav_TurnKey {
+                            display: block;
+                            width: 190px;
+                            height: 42px;
+                            background-position: 0 -42px;
+                            background-repeat: no-repeat;
+                            background-image: url(images/navImages/Top_Nav_TurnKey.png);
+                        }
+                    </style>
+                    <a class="selected_btn_Nav_TurnKey" title="Turnkey Solutions"></a>
+                </td>
+
+                <td>
+                    <img src="images/navImages/Top_Nav_Spacer01.png" width="7" height="42" alt="">
+                </td>
+                <td>
+                    <a class="btn_Nav_Investors" href="investors.html" title="Investors"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table id="Table_Footer" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td colspan="5" align="center" style="padding-bottom: 14px; padding-top:12px">
+                <span class="lightText">Contact Us Via</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 40px">
+                <a class="btn_Nav_Footer_Phone"></a>
+            </td>
+            <td colspan="3" align="center">
+                <div id="mapBox" style="display:none;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14368.476252577759!2d-80.1909197!3d25.7996458!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6abb7964cfd%3A0xf37c1560ceec4146!2s2330+NE+2nd+Ave%2C+Miami%2C+FL+33137!5e0!3m2!1sen!2sus!4v1414718367406" width="400" height="300" frameborder="0" style="border:0"></iframe>
+                </div>
+                <a style="cursor:default" id="inline" href="#mapBox"><img class="btn_Nav_Footer_Location" src="blank.gif" /></a>
+            </td>
+            <td align="left" style="padding-left:40px">
+                <a class="btn_Nav_Footer_Email" href="mailto:info@crowncanna.com" target="_blank" title="Email"></a>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 37px">
+                <span class="lightText">305-432-6975</span>
+            </td>
+            <td colspan="3" align="center" style="padding-bottom: 20px; padding-top: 20px; padding-right: 2px">
+                <span class="lightText">2330 NE 2nd Ave</span><br />
+                <span class="lightText">Miami, FL 33137</span>
+            </td>
+            <td align="left" style="padding-left: 1px;">
+                <span class="lightText">info@crowncanna.com</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center" height="1" style="background-color: #adadad"></td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center" style="padding-bottom: 10px; padding-top: 20px">
+                <span class="lightText">Follow Us On</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <a class="btn_Nav_Footer_Facebook" href="https://www.facebook.com/profile.php?id=100006088127444" title="Join us on Facebook" target="_blank"></a>
+            </td>
+            <td align="center" style="padding-left: 14px; padding-right: 14px">
+                <a class="btn_Nav_Footer_Instagram" href="https://www.instagram.com/crowncanna" title="Join us on Instagram" target="_blank"></a>
+            </td>
+            <td colspan="2" align="left">
+                <a class="btn_Nav_Footer_Twitter" href="https://www.twitter.com/CrownCanna" title="Join us on Twitter" target="_blank"></a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center" style="padding-top: 10px; padding-bottom: 10px;">
+                <span class="lightGrayText">© 2014 CrownCanna.com</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/spacer.gif" width="281" height="1" alt="">
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="115" height="1" alt="">
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="54" height="1" alt="">
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="113" height="1" alt="">
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="281" height="1" alt="">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

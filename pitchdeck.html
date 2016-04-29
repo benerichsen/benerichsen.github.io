@@ -1,201 +1,400 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<head lang="en">
+<head>
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
-
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="reveal.css">
-    <meta charset="UTF-8">
-    <title>CrownCanna Pitch Deck</title>
+    <meta name="viewport" content="width=device-width">
+    <title>CrownCanna - Sophisticated cultivation solutions for qualified cannabis growers</title>
 </head>
-<body>
+<body style="background:#fff; margin: 0px; overflow:hidden">
+    <!-- it works the same with all jquery version from 1.x to 2.x -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (40KB) or jssor.sliderc.mini.js (32KB, with caption, no slideshow) or jssor.sliders.mini.js (28KB, no caption, no slideshow) instead for release -->
+    <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
 
-<style type="text/css" media="screen">
-    html body{
-        margin: 0; padding: 0;
-    }
-    .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, h4, h5{
-        font-family: 'PT Sans', sans-serif;
-        font-weight: 700;
-        font-size: 1.6em;
-    }
-    .reveal .slides ul, .reveal .slides li, .reveal .slides p{
-        font-family: 'PT Sans', sans-serif;
-        font-weight: 400;
-        text-align: left;
-    }
-    .reveal .slides section{
-        
-    }
-    .slides section h1{
+            var options = {
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 1500                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            };
 
-    }
-    .reveal .slides section{
-        height: 100%
-    }
-    li{
-        margin-bottom: 20px;
-    }
-</style>
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 
-<div class = "reveal">
-    <div class = "slides">
-        <!-- Introduction -->
-        <section>
-            <h1>Introduction</h1>
-            <ul>
-                <li>I’ve worked as a commercial real estate broker in the Miami area for the past 15 years. After the mortgage industry collapse in 2007, I began to look for alternative sources of income.</li>
-                <li>I spoke to a friend in California who was growing medical marijuana for dispensaries and he offered to teach me the business.</li>
-                <li>Over the next 4 years I grew marijuana in rental houses, industrial warehouses, and outdoors on land I purchased in Northern California.</li>
-                <li>During that time I encountered just about every major problem a grower can face.  I had trouble finding suitable spaces, issues with contractors, security issues--you name it.  That's when I first had the idea for Crown Canna.</li>
-                <img src = "unnamed.png" width = "200px" height = "auto" style = "margin: 0 auto; display: block;"/>
-            </ul>
-        </section>
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var windowWidth = $(window).width();
 
-        <!-- Obstacles -->
-       <section>
-                <h1>Obstacles</h1>
-                <ul>
-                    <li>In Colorado, an address for a grow space is required prior to applying for a cultivation license.   The license isn’t issued until the completed grow space has been inspected by both the city and county.</li>
-                    <li>One of the most challenging obstacles any grower will face is finding a suitable property that’s zoned for cultivation and has the infrastructure to accommodate a commercial grow.</li>
-                    <li>When leasing, a grower must find one of the few landlords willing to lease for the purpose of cultivation.</li>
-                    <li>Growing build-outs can be very pricey and time consuming with costs regularly reaching $200,000+.</li>
-                    <li>Few professional contractors have experience designing and building grow rooms to code and those that do are costly and in high demand.</li>
-                </ul>
-        </section>
-        
-        <!-- Solution -->
-        <section>
-                <h1>Solution</h1>
-                <ul>
-                    <li>Crown Canna has developed a concept for cutting edge turnkey grow spaces designed and built by Crown Canna’s industry experts.</li>
-                    <li>By choosing Crown Canna, growers can sign a lease and start cultivation within days not months.</li>
-                    <li>Units will fulfill all the requirements set forth in the CO licensing process and will be guaranteed to pass inspection.</li>
-                </ul>
-        </section>
+                if (windowWidth) {
+                    var windowHeight = $(window).height();
+                    var originalWidth = jssor_slider1.$OriginalWidth();
+                    var originalHeight = jssor_slider1.$OriginalHeight();
 
-        <!-- Market Validation -->
-        <section>
-            <h1>Market Validation</h1>
-            <ul>
-                <li>We chose Denver to launch operations after researching demand for grow space firsthand.</li>
-                <li>Many dispensary owners and growers we met with expressed enthusiasm for the Crown concept and spoke of the extreme shortage of grow space.</li>
-                <li>Sales of marijuana in Colorado exceeded $900m in 2015, from $700m in 2014.</li>
-            </ul>
-        </section>
+                    var scaleWidth = windowWidth;
+                    if (originalWidth / windowWidth > originalHeight / windowHeight) {
+                        scaleWidth = Math.ceil(windowHeight / originalHeight * originalWidth);
+                    }
 
-        <!-- Market Size -->
-        <section>
-            <h1>Market Size</h1>
-            <ul>
-                <li>Marijuana sales in the U.S. reached $5.4b in 2015.</li>
-                <li>"You won't find another industry growing at that kind of clip"--ArcView Group CEO.</li>
-                <li>Demand for grow space will continue to explode as more states follow the examples set by Colorado and Washington.</li>
-                <li>Crown's business plan is scalable and can be leveraged to take advantage of new U.S. markets as laws continue to change.</li>
-            </ul>
-        </section>
+                    jssor_slider1.$ScaleWidth(scaleWidth);
+                }
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
 
-        <!-- Model/Product and Services -->
-        <section>
-            <h1>Model/Product & Services</h1>
-            <ul>
-                <li>25,000 sf industrial property in the Denver area to be purchased for ~$80 sq/ft.</li>
-                <li>The structure will then be renovated and subdivided into 10-12 private grow spaces.</li>
-                <li>Total purchase price of the unimproved building to be about $2m; renovation is expected to cost another $1m.</li>
-                <li>Each unit is expected to generate revenue of $170k year ($85 sq/ft/yr) with the total annual property revenue anticipated to be $2m.  </li>
-                <li>Annual operating expenses are estimated to be $670k and annual net rental income to be $1.4m.</li>
-                <li>Crown will also realize additional revenue through consulting services and the sale of packaging solutions and materials.</li>
-            </ul>
-        </section>
+            ScaleSlider();
 
-        <!-- Team Section -->
-        <section>
-            <section>
-                <h1 style = "padding-top: 250px;">Team Members</h1>
-            </section>
-            <section>
-                <h1>Jonas Zetzel</h1>
-                <ul>
-                    <li>Licensed real estate broker in the State of Florida specializing in commercial industrial and warehouse leasing and sales. </li>
-                    <li>Director of Operations, Wynwood Realty 2006-2008. </li>
-                    <li>Owns 50 acres of agricultural property in California for future use as Cannabis growing sites.</li>
-                    <li>Attended the University of Massachusetts – Amherst from 1994-1997 and the University of Miami (FL) from 1998-1999.</li>
-                </ul>
-            </section>
-                    <section>
-                <h1>Bryan Maffei</h1>
-                <ul>
-                    <li>Valedictorian of the class of 2008 at Oaksterdam University, a leading Cannabis institution. </li>
-                    <li>Fifteen years experience in designing and building state of the art, legal medicinal Cannabis cultivation facilities in California. </li>
-                    <li>Oversaw the construction of over thirty facilities.</li>
-                    <li>Extensive knowledge in many horticulture methods--hydroponic, deep water, soil-based, among others.</li>
-                    <li>Licensed C-10 Electrical Contractor in the state of California for the past twelve years.</li>
-                </ul>
-            </section>
-            <section>
-                <h1>Benjamin Erichsen</h1>
-                <ul>
-                    <li>Founded a corporate communications-centric business in 2001 and continues to manage its daily operation. </li>
-                    <li>Extensive experience with corporate communications: press releases, social and traditional media, television engagements, etc. </li>
-                    <li>Particular emphasis on public and market reaction to corporate announcements and their effect on the public perception of the corporation.</li>
-                    <li>Graduated from Hamilton College in 1997 with a double concentration in English and Psychology.</li>
-                </ul>
-            </section>
-            <section>
-                <h1>John Stookey</h1>
-                <ul>
-                    <li>Over 25 years experience in the finance and commercial real estate development industries. </li>
-                    <li>Founded Huffman Builders West and developed 1 million square feet of office/commercial real estate in NV and CA.  </li>
-                    <li>Founded Headwaters Capital, a private equity hedge fund.</li>
-                    <li>Career includes fixed income sales at Kidder Peabody and Equity Derivatives trading on both the American and Pacific stock exchanges.</li>
-                </ul>
-            </section>
-    
-        </section>
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+            else {
+                $(window).bind("orientationchange", ScaleSlider);
+            }
+            //responsive code end
+        });
 
-        <!-- Competition -->
-        <section>
-            <h1>Competition</h1>
-            <ul>
-                <li>No one currently offers turn-key grow space in the Denver area.  </li>
-                <li>Several companies claim to offer cultivation space but our calls to each company revealed that none are operational. </li>
-                <li>The only competition Crown will face in the near-term future is the alternate option of growers buying and building out their own grow space.  Cost and logistical concerns prevent it from being considered a true competitive threat to our business model.</li>
-            </ul>
-        </section>
 
-        <!-- Needs -->
-        <section>
-            <h1>Needs</h1>
-            <ul>
-                <li>We are seeking $3.5mil to launch operations.  </li>
-                <li>$3m will be used to purchase the unimproved industrial space and to renovate it.</li>
-                <li>$500k will be held to cover operating expenses until tenants are in place.  </li>
-            </ul>
-        </section>
+    </script>
+
+    <div style="position: relative; width: 100%; overflow-y: hidden;">
+        <div style="position: relative; left: 50%; width: 5000px; text-align: center; margin-left: -2500px;">
+            <!-- Jssor Slider Begin -->
+            <!-- You can move inline styles to css file or css block. -->
+            <div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1920px; height: 1080px; ">
+                <!-- Loading Screen -->
+                <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block; background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">
+                    </div>
+                    <div style="position: absolute; display: block; background: url(images/slideshow/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%; ">
+                    </div>
+                </div>
+
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1920px; height: 1080px; overflow: hidden;">
+                    <style>
+                        .headingWhite {
+                            margin-top: 40px;
+                            padding-left: 60px;
+                            text-align: left;
+                            text-shadow: 4px 4px 0px #3C3C3C;
+                            color: white;
+                            font-size: 70pt;
+                        }
+
+                        .textWhite {
+                            margin-top: -50px;
+                            padding-left: 200px;
+                            text-align: left;
+                            text-shadow: 3px 3px 0px #3C3C3C;
+                            color: white;
+                            font-size: 50pt;
+                        }
+
+                        .whiteUL li:before {
+                            font-size: 60pt;
+                            content: '\2022';
+                            margin-left: -55px;
+                            text-shadow: 3px 3px 0px #3C3C3C;
+                        }
+                    </style>
+
+                    <div class="blueColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Obstacles Facing Cannabis Growers</h3>
+                        <img src="images/pitchdeckImages/hurdles.png" width="600" height="691" align=right style="margin-right: 50px; margin-top: -60px; margin-left:-80px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Reluctant or unwilling landlords
+                            </li>
+                            <li>
+                                Large outlay of time
+                            </li>
+                            <li>
+                                Significant capital required
+                            </li>
+                            <li>
+                                Address for cultivation required to apply for CO license
+                            </li>
+                            <li>
+                                Equipped grow space must pass inspection prior to license issuance
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="greenColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">The Crown Solution</h3>
+                        <img src="images/pitchdeckImages/bulb.png" width="376" height="600" align=right style="margin-right: 50px; margin-top: -60px; margin-left:-80px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                No-hassle "one-stop shopping" for tenants
+                            </li>
+                            <li>
+                                Cutting edge units designed by industry experts
+                            </li>
+                            <li>
+                                Fulfills requirements for CO licensing process, greatly reducing cost and risk
+                            </li>
+                            <li>
+                                Secure, efficient environment places focus on cultivation and maximizing yield
+                            </li>
+                            <li>
+                                Consulting expertise available to all clients
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grayColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Market Validation</h3>
+                        <img src="images/pitchdeckImages/check.png" width="600" height="464" align=right style="margin-right: 50px; margin-top: 0px; margin-left:-80px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Demand for cultivation space far outstrips supply in Denver
+                            </li>
+                            <li>
+                                "Booming sales of cannabis have pot merchants scrambling to find enough (space) suitable for growing"--Denver Post 3/11/14
+                            </li>
+                            <li>
+                                Verbal commitments in place with qualified growers in Denver area
+                            </li>
+                            <li>
+                                “Nobody is growing enough...activity is off the charts, but we’re still not meeting demand.”--Jason Thomas, Avalon Realty 4/14
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="orangeColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Market Size</h3>
+                        <img src="images/pitchdeckImages/chart5.png" width="408" height="800" align="right" style="margin-right: 50px; margin-top: -100px">
+                        <ul class="textWhite whiteUL" style="list-style: none; font-size: 45pt;">
+                            <li>
+                                “(It's) one of the fastest-growing industries...Domestically, (no other) market is growing as quickly."--Arcview's Steve Berg
+                            </li>
+                            <li>
+                                Arcview projects 2014 revenue of $316M in Washington and $802M in Colorado, despite nascent infrastructure and frequent shortages
+                            </li>
+                            <li>
+                                Explosive growth due to rapidly changing public and political sentiment 
+                            </li>
+                            <li>
+                                11/14 Gallup poll continues to show majority of all Americans support full legalization
+                            </li>
+                            <li>
+                                "To my fellow Republicans....Wake up! ... The American people have shifted on this issue."--Rep. Dana Rohrabacher, R-CA, 11/14
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blueColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Products and Services</h3>
+                        <img src="images/pitchdeckImages/box.png" width="600" height="487" align=right style="margin-right: 50px; margin-top: 0px; margin-left:-80px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Revenue primarily driven by rental income @ $85/sf/year
+                            </li>
+                            <li>
+                                Secondary revenue stream from consulting services
+                            </li>
+                            <li>
+                                Ancillary offerings will augment revenue and support brand recognition
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="greenColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">The Model</h3>
+                        <img src="images/pitchdeckImages/handshake.png" width="600" height="505" align=right style="margin-right: 50px; margin-top: 0px; margin-left:-50px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Buy industrial space and subdivide into cutting-edge cultivation units
+                            </li>
+                            <li>
+                                Qualified tenants will lease turnkey space which command premium rates
+                            </li>
+                            <li>
+                                Additional revenue recognized through related products and services
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grayColor" style="padding-left: 0px; padding-top: 0px; padding-bottom: 10px;">
+                        <h3 class="headingWhite" style="margin-top:10px">The Team</h3>
+
+                        <div style="margin-left:-120px; margin-top:-40px; padding-right:40px">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <h1 style="color: white; padding-left: 180px; text-align: left; margin-top: -40px; font-size: 40pt; margin-bottom:70px">
+                                            Jonas Zetzel
+                                        </h1>
+                                        <ul class="textWhite" style="font-size:24pt">
+                                            <li>
+                                                Florida real estate broker specializing in commercial industrial and warehouse leasing and sales
+                                            </li>
+                                            <li>
+                                                Qualified tenants will lease turnkey space which command premium rates
+                                            </li>
+                                            <li>
+                                                Additional revenue recognized through related products and services
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <h1 style="color: white; padding-left: 180px; text-align: left; margin-top: -240px; font-size: 40pt; margin-bottom: 70px">
+                                            Benjamin Erichsen
+                                        </h1>
+                                        <ul class="textWhite" style="font-size: 24pt; ">
+                                            <li>
+                                                Founded a corporate communications-centric business, 2001-present
+                                            </li>
+                                            <li>
+                                                Has extensive experience with all manner of corporate communications
+                                            </li>
+                                            <li>
+                                                His company places particular emphasis on public and market reaction to corporate announcements
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h1 style="color: white; padding-left: 180px; text-align: left; margin-top: 0px; font-size: 40pt; margin-bottom: 70px">
+                                            Bryan Maffei
+                                        </h1>
+                                        <ul class="textWhite" style="font-size: 24pt; ">
+                                            <li>
+                                                Has 14 years experience in designing and building medicinal Cannabis cultivation facilities in California
+                                            </li>
+                                            <li>
+                                                Oversaw the construction of over thirty facilities
+                                            </li>
+                                            <li>
+                                                Is C-10 Contractor in CA with extensive knowledge in the many types of horticulture
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <h1 style="color: white; padding-left: 180px; text-align: left; margin-top: -140px; font-size: 40pt; margin-bottom: 70px">
+                                            JC Londono
+                                        </h1>
+                                        <ul class="textWhite" style="font-size: 24pt">
+                                            <li>
+                                                Is a 3rd generation farmer having owned over 3000 acres for both agriculture and livestock
+                                            </li>
+                                            <li>
+                                                Owned and operated River Citrus, a 400 acre citrus farm in Desoto County, FL, 2006-2012
+                                            </li>
+                                            <li>
+                                                Owned and operated 4N1 Grove, a citrus farm of 450 acres in Highland County, 2010-present
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <h1 style="color: white; padding-left: 180px; text-align: left; margin-top: -40px; font-size: 40pt; margin-bottom: 70px">
+                                            John Stookey
+                                        </h1>
+                                        <ul class="textWhite" style="font-size: 24pt; ">
+                                            <li>
+                                                Has over 25 years experience in finance and commercial real estate development
+                                            </li>
+                                            <li>
+                                                Founded Huffman Builders West; developed 1 million square feet of office/commercial real estate in NV and CA
+                                            </li>
+                                            <li>
+                                                Founded Headwaters Capital, a private equity hedge fund
+                                            </li>
+                                        </ul>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="orangeColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Competition</h3>
+                        <img src="images/pitchdeckImages/runners.png" width="600" height="549" align=right style="margin-right: 50px; margin-top: 20px; margin-left:-50px">
+                        <ul class="textWhite whiteUL" style="list-style: none; font-size: 36pt; margin-top: -100px;">
+                            <li>
+                                Competitors do not seem to be operational in the Denver area
+                            </li>
+                            <li>
+                                Rapid growth will sustain high demand for cultivation space
+                            </li>
+                            <li>
+                                "We have seen a dramatic increase in people who are looking for warehouse space (in Denver)"--Taylor West, spokesman, NCIA
+                            </li>
+                            <li>
+                                Current competition: potential tenants opting to obtain and equip space the hard way instead of the Crown way
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blueColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Branding and Marketing</h3>
+                        <img src="images/pitchdeckImages/megaphone.png" width="600" height="503" align=right style="margin-right: 50px; margin-top: -60px; margin-left:-80px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                In-person solicitation effective in filling units
+                            </li>
+                            <li>
+                                Trade shows
+                            </li>
+                            <li>
+                                Industry publications
+                            </li>
+                            <li>
+                                Cross-marketing/affiliations
+                            </li>
+                            <li>
+                                Internet marketing and social media
+                            </li>
+                            <li>
+                                Packaging solutions carry logo to help cement brand
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="greenColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Projections</h3>
+                        <img src="images/pitchdeckImages/chart.png" width="600" height="542" align=right style="margin-right: 50px; margin-top: 0px; margin-left:-10px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Start-up cost: $3.1m
+                            </li>
+                            <li>
+                                Each unit leases for $170,000/year ($85/foot)
+                            </li>
+                            <li>
+                                Revenue of $2,040,000/year
+                            </li>
+                            <li>
+                                Operating Expense of $668,333/year
+                            </li>
+                            <li>
+                                Expected annual net income of $1,375,417
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grayColor" style="padding-left:0px; padding-top:0px; padding-bottom:0px">
+                        <h3 class="headingWhite">Needs</h3>
+                        <img src="images/pitchdeckImages/clipboard.png" width="600" height="615" align=right style="margin-right: 50px; margin-top: -60px; margin-left: 0px">
+                        <ul class="textWhite whiteUL" style="list-style:none">
+                            <li>
+                                Seeking $3.5m to launch operations
+                            </li>
+                            <li>
+                                Plan to acquire a 25,000/sf building in Denver at $80/sf: $2m
+                            </li>
+                            <li>
+                                Build out twelve 2,000 sq/ft cultivation facilities @ $80,000/unit: $960,000
+                            </li>
+                            <li>
+                                Remainder to be used for operating expenses
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
-<script src="head.min.js"></script>
-<script src="reveal.js"></script>
-
-<script>
-
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        center: true,
-        // rtl: true,
-        parallaxBackgroundSize: '2096px 442px', // CSS syntax, e.g. "2100px 900px"
-        // Amount to move parallax background (horizontal and vertical) on slide change
-        // Number, e.g. 100
-        parallaxBackgroundHorizontal: '50',
-        parallaxBackgroundImage: 'bg.jpg',
-        transition: 'linear',
-        // transitionSpeed: 'slow',
-        // backgroundTransition: 'slide'
-    });
-
-</script>
 </body>
 </html>

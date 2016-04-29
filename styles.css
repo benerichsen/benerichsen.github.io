@@ -1,0 +1,510 @@
+﻿@charset "utf-8";
+/* CSS Document */
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.linkStyle A:link {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.linkStyle A:visited {
+    color: #FFFFFF;
+}
+
+.linkStyle A:hover {
+    color: #e44727;
+    text-decoration: underline;
+}
+
+.linkStyle A:active {
+    color: #adadad;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, "Segoe UI";
+    color: #3C3C3C;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1em;
+}
+
+h1 {
+    font-size: 20pt;
+    position: relative;
+    left: -2px;
+    bottom: -6px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 16pt;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22pt;
+    line-height: 1em;
+}
+
+h4 {
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: .0em;
+}
+
+p, ul {
+    font-family: Arial, "Segoe UI";
+    font-size: 9pt;
+}
+
+.whiteUL li:before {
+    font-size: 18pt;
+    content: '\2022';
+    margin-left: -20px;
+    padding-right: 5px;
+    text-shadow: 1px 1px 0px #3C3C3C;
+}
+
+.grayUL li:before {
+    font-size: 18pt;
+    margin-left: -20px;
+    content: '\2022';
+    padding-right: 5px;
+}
+
+.investorsPageUlDark {
+    margin-top: -12px;
+    font-size: 16pt;
+    color: #3C3C3C;
+}
+
+.navbackground {
+    background-color: hsla(0,100%,50%,0.7);
+}
+
+.orangeColor {
+    background-color: #e44727;
+}
+
+.blueColor {
+    background-color: #0092c4;
+}
+
+.greenColor {
+    background-color: #858f2f;
+}
+
+.grayColor {
+    background-color: #3c3c3c;
+}
+
+.grayColorForeground {
+    color: #3c3c3c;
+}
+
+.shadowPageForeground {
+    text-shadow: 1px 1px 0px #3C3C3C;
+    color: white;
+}
+
+@font-face {
+    font-family: AvanteGarde;
+    src: url(AvanteGarde.ttf);
+}
+
+.mainTable {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.pageHeader {
+    font-family: AvanteGarde, Arial, "Segoe UI";
+    font-size: 18pt;
+}
+
+.subPagesHeader {
+    position: absolute;
+    display: block;
+}
+
+.splitter {
+    height: 2px;
+    width: 100%;
+    top: 42px;
+    position: absolute;
+}
+
+.lightText {
+    font-family: Arial, "Segoe UI";
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+}
+
+.lightGrayText {
+    font-family: Arial, "Segoe UI";
+    color: #adadad;
+    font-size: 14px;
+    text-align: center;
+}
+
+.btn_Nav_Home {
+    cursor: pointer;
+    display: block;
+    width: 256px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-image: url(images/navImages/Logo.png);
+}
+
+    .btn_Nav_Home:hover {
+        background-position: 0 -42px;
+    }
+
+    .btn_Nav_Home span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Consulting {
+    cursor: pointer;
+    display: block;
+    width: 127px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-image: url(images/navImages/Top_Nav_Consulting.png);
+}
+
+    .btn_Nav_Consulting:hover {
+        background-position: 0 -42px;
+    }
+
+    .btn_Nav_Consulting span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Customized {
+    cursor: pointer;
+    display: block;
+    width: 187px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-image: url(images/navImages/Top_Nav_Customized.png);
+}
+
+    .btn_Nav_Customized:hover {
+        background-position: 0 -42px;
+    }
+
+    .btn_Nav_Customized span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_TurnKey {
+    cursor: pointer;
+    display: block;
+    width: 190px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-image: url(images/navImages/Top_Nav_TurnKey.png);
+}
+
+    .btn_Nav_TurnKey:hover {
+        background-position: 0 -42px;
+    }
+
+    .btn_Nav_TurnKey span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Investors {
+    cursor: pointer;
+    display: block;
+    width: 122px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-image: url(images/navImages/Top_Nav_Investors.png);
+}
+
+    .btn_Nav_Investors:hover {
+        background-position: 0 -42px;
+    }
+
+    .btn_Nav_Investors span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_HomeButton_Customized {
+    cursor: pointer;
+    display: block;
+    width: 213px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-image: url(images/homePageNavButtons/CustomizedSpaces.png);
+}
+
+    .btn_Nav_HomeButton_Customized:hover {
+        background-position: 0 -320px;
+    }
+
+    .btn_Nav_HomeButton_Customized span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_HomeButton_Consulting {
+    cursor: pointer;
+    display: block;
+    width: 213px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-image: url(images/homePageNavButtons/Consulting.png);
+}
+
+    .btn_Nav_HomeButton_Consulting:hover {
+        background-position: 0 -320px;
+    }
+
+    .btn_Nav_HomeButton_Consulting span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_HomeButton_TurnKey {
+    cursor: pointer;
+    display: block;
+    width: 213px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-image: url(images/homePageNavButtons/TurnKey.png);
+}
+
+    .btn_Nav_HomeButton_TurnKey:hover {
+        background-position: 0 -320px;
+    }
+
+    .btn_Nav_HomeButton_TurnKey span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_HomeButton_Investors {
+    cursor: pointer;
+    display: block;
+    width: 213px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-image: url(images/homePageNavButtons/Investors.png);
+}
+
+    .btn_Nav_HomeButton_Investors:hover {
+        background-position: 0 -320px;
+    }
+
+    .btn_Nav_HomeButton_Investors span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Location {
+    cursor: pointer;
+    display: block;
+    width: 104px;
+    height: 104px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Location.png);
+}
+
+    .btn_Nav_Footer_Location:hover {
+        background-position: 0 -104px;
+    }
+
+    .btn_Nav_Footer_Location span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Phone {
+    display: block;
+    width: 104px;
+    height: 104px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Phone.png);
+}
+
+    .btn_Nav_Footer_Phone:hover {
+        background-position: 0 0px;
+    }
+
+    .btn_Nav_Footer_Phone span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Email {
+    cursor: pointer;
+    display: block;
+    width: 104px;
+    height: 104px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Email.png);
+}
+
+    .btn_Nav_Footer_Email:hover {
+        background-position: 0 -104px;
+    }
+
+    .btn_Nav_Footer_Email span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Facebook {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Facebook.png);
+}
+
+    .btn_Nav_Footer_Facebook:hover {
+        background-position: 0 -40px;
+    }
+
+    .btn_Nav_Footer_Facebook span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Instagram {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Instagram.png);
+}
+
+    .btn_Nav_Footer_Instagram:hover {
+        background-position: 0 -40px;
+    }
+
+    .btn_Nav_Footer_Instagram span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_Twitter {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/Twitter.png);
+}
+
+    .btn_Nav_Footer_Twitter:hover {
+        background-position: 0 -40px;
+    }
+
+    .btn_Nav_Footer_Twitter span {
+        position: absolute;
+        top: -999em;
+    }
+
+.btn_Nav_Footer_LinkedIn {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url(images/footerButtons/LinkedIn.png);
+}
+
+    .btn_Nav_Footer_LinkedIn:hover {
+        background-position: 0 -40px;
+    }
+
+    .btn_Nav_Footer_LinkedIn span {
+        position: absolute;
+        top: -999em;
+    }
+
+.arrowNavigatorl, .arrowNavigatorr, .arrowNavigatorldn, .arrowNavigatorrdn {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    background: url(images/slideshow/SlideshowArrows.png) center center no-repeat;
+    overflow: hidden;
+}
+
+.arrowNavigatorl {
+    background-position: -3px -33px;
+}
+
+.arrowNavigatorr {
+    background-position: -63px -33px;
+}
+
+.arrowNavigatorl:hover {
+    background-position: -123px -33px;
+}
+
+.arrowNavigatorr:hover {
+    background-position: -183px -33px;
+}
+
+.arrowNavigatorldn {
+    background-position: -243px -33px;
+}
+
+.arrowNavigatorrdn {
+    background-position: -303px -33px;
+}
+
+
+.bulletNavigation div, .bulletNavigation div:hover, .bulletNavigation .av {
+    background: url(images/slideshow/BulletNavigation.png) no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.bulletNavigation div {
+    background-position: -5px -3px;
+}
+
+    .bulletNavigation div:hover, .bulletNavigation .av:hover {
+        background-position: -35px -3px;
+    }
+
+.bulletNavigation .av {
+    background-position: -65px -3px;
+}
+
+.bulletNavigation .dn, .bulletNavigation .dn:hover {
+    background-position: -95px -3px;
+}
