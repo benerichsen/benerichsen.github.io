@@ -2,8 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="reveal.css">
@@ -18,13 +18,17 @@
     }
     .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, h4, h5{
         font-family: 'PT Sans', sans-serif;
-        font-weight: 700;
+        font-weight: 300;
         font-size: 1.6em;
+        text-transform: uppercase;
+        color: #00b700;
+        letter-spacing: 3px;
     }
     .reveal .slides ul, .reveal .slides li, .reveal .slides p{
         font-family: 'PT Sans', sans-serif;
         font-weight: 400;
         text-align: left;
+        color: white;
     }
     .reveal .slides section{
         
@@ -37,7 +41,37 @@
     }
     li{
         margin-bottom: 20px;
+        position: relative;
     }
+    li:before{    
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: .14285714em;
+    text-align: center;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    content: "\f00c";
+    color: #00b700;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    }
+    .slides section ul{
+        padding-left: 0;
+    margin-left: 2.14285714em;
+    list-style-type: none;
+    }
+    div.reveal{ position: relative; }
+    div.reveal:before{
+        position: absolute;
+        display: block;
+        left: 5%;
+        bottom: 5%;
+        z-index: 1;
+        content: url('crown_logowhite.jpg');
+    }
+
 </style>
 
 <div class = "reveal">
@@ -45,12 +79,12 @@
         <!-- Introduction -->
         <section>
             <h1>Introduction</h1>
-            <ul>
+            <ul class="fa-ul">
                 <li>I’ve worked as a commercial real estate broker in the Miami area for the past 15 years. After the mortgage industry collapse in 2007, I began to look for alternative sources of income.</li>
                 <li>I spoke to a friend in California who was growing medical marijuana for dispensaries and he offered to teach me the business.</li>
                 <li>Over the next 4 years I grew marijuana in rental houses, industrial warehouses, and outdoors on land I purchased in Northern California.</li>
                 <li>During that time I encountered just about every major problem a grower can face.  I had trouble finding suitable spaces, issues with contractors, security issues--you name it.  That's when I first had the idea for Crown Canna.</li>
-                <img src = "unnamed.png" width = "200px" height = "auto" style = "margin: 0 auto; display: block;"/>
+                <!--<img src = "unnamed.png" width = "200px" height = "auto" style = "margin: 0 auto; display: block;"/>-->
             </ul>
         </section>
 
@@ -190,7 +224,7 @@
         // Amount to move parallax background (horizontal and vertical) on slide change
         // Number, e.g. 100
         parallaxBackgroundHorizontal: '50',
-        parallaxBackgroundImage: 'bg.jpg',
+        parallaxBackgroundImage: 'header-background.jpg',
         transition: 'linear',
         // transitionSpeed: 'slow',
         // backgroundTransition: 'slide'
